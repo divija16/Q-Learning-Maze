@@ -1,24 +1,10 @@
-"""
-Reinforcement learning maze example.
-
-This script is the main part which controls the update method of this example using q-learning algorithm.
-The RL algorithm (Q-learning) is in RL_agent.py.
-The environment is presented in maze_env.py.
-
-Red rectangle:          explorer.
-Black rectangles:       hells       [reward = -1].
-Yellow bin circle:      paradise    [reward = +1].
-All other states:       ground      [reward = 0].
-
-"""
-
-from maze_env import Maze
-from RL_agent import QLearningTable
+from env import Maze
+from agent import QLearningTable
 import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
-episode_count = 50 # Number of episodes to run the experiment
+episode_count = 1000 # Number of episodes to run the experiment
 episodes = range(episode_count)
 movements = [] # Number of movements happened in each episode
 rewards = [] # The gained reward in each episode

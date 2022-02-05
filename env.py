@@ -1,14 +1,3 @@
-"""
-The Maze environment: A grid of tiles.
-
-Red rectangle:          explorer object.
-
-Black rectangles:       hells       [reward = -1].
-Yellow bin circle:      gold        [reward = +1].
-All other states:       ground      [reward = 0].
-
-"""
-
 import numpy as np
 import time
 import sys
@@ -20,8 +9,8 @@ else:
     import tkinter as tk
 
 UNIT = 40   # pixels
-MAZE_H = 8  # grid height
-MAZE_W = 8  # grid width
+MAZE_H = 6  # grid height
+MAZE_W = 6  # grid width
 
 class Maze():
     def __init__(self):
@@ -53,27 +42,27 @@ class Maze():
         # hell 1
         hell1_center = origin + np.array([UNIT * 2, UNIT])
         self.hell1 = self.canvas.create_rectangle(
-            hell1_center[0] - 31, hell1_center[1] - 31,
-            hell1_center[0] + 31, hell1_center[1] + 31,
+            hell1_center[0] - 15, hell1_center[1] - 15,
+            hell1_center[0] + 15, hell1_center[1] + 15,
             fill='black')
         # hell 2
         hell2_center = origin + np.array([UNIT, UNIT * 2])
         self.hell2 = self.canvas.create_rectangle(
-            hell2_center[0] - 31, hell2_center[1] - 31,
-            hell2_center[0] + 31, hell2_center[1] + 31,
+            hell2_center[0] - 15, hell2_center[1] - 15,
+            hell2_center[0] + 15, hell2_center[1] + 15,
             fill='black')
 
         # create oval (the goal point)
         oval_center = origin + UNIT * 2
         self.oval = self.canvas.create_oval(
-            oval_center[0] - 31, oval_center[1] - 31,
-            oval_center[0] + 31, oval_center[1] + 31,
+            oval_center[0] - 15, oval_center[1] - 15,
+            oval_center[0] + 15, oval_center[1] + 15,
             fill='yellow')
 
         # create red rect (the agent)
         self.rect = self.canvas.create_rectangle(
-            origin[0] - 31, origin[1] - 31,
-            origin[0] + 31, origin[1] + 31,
+            origin[0] - 15, origin[1] - 15,
+            origin[0] + 15, origin[1] + 15,
             fill='red')
 
         # pack all
@@ -93,8 +82,8 @@ class Maze():
         self.canvas.delete(self.rect)
         origin = np.array([20, 20])
         self.rect = self.canvas.create_rectangle(
-            origin[0] - 31, origin[1] - 31,
-            origin[0] + 31, origin[1] + 31,
+            origin[0] - 15, origin[1] - 15,
+            origin[0] + 15, origin[1] + 15,
             fill='red')
         # return observation
         return self.canvas.coords(self.rect)
