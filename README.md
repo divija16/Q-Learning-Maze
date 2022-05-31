@@ -38,9 +38,9 @@ After 100 episodes, the number of movements get converged to the optimal. The re
 
 The results are in out folder and the performance of the agent playing the game can is in [screen](./out/screen.txt)
 
-# Contributors
+<!-- # Contributors
 
-- Divija Swetha Gadiraju <dgadiraj@purdue.edu>
+- Divija Swetha Gadiraju <dgadiraj@purdue.edu> -->
 
 # License
 [MIT LICENSE](LICENSE)
